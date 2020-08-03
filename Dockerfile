@@ -1,13 +1,12 @@
 FROM centos:7
       
 RUN yum clean all -y && \
-  yum install -y git && \
-  yum install -y nginx && \
-  yum clean all -y
+  yum install -y nginx
+  
 
-RUN mkdir /root/app
-WORKDIR /root/app
-
+RUN sed -i 's/^\s*listen\s.*/ listen 8080/' /etc/nginx/conf.d/default.conf && \
+    sed -i 's/^\s*root\s.*/ root \/demo/' /etc/nginx/conf.d/default.conf
+    
 
 USER 1001
 EXPOSE 8080
