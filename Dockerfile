@@ -18,5 +18,5 @@ RUN sed -i 's/^\s*listen\s.*/ listen 8080/' /etc/nginx/conf.d/default.conf && \
 
 USER 1001
 EXPOSE 8080
-ENTRYPOINT ["nginx"]
+ENTRYPOINT ["tail","-f","/dev/null]
 
