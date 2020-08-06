@@ -14,7 +14,8 @@ RUN yum clean all -y && \
     
 RUN chgrp -R 0 /etc/nginx && chmod -R g+rwX /etc/nginx && \
     chgrp -R 0 /var/log/nginx && chmod -R g+rwX /var/log/nginx && \
-    chgrp -R 0 /var/cache/nginx && chmod -R g+rwX /var/cache/nginx
+    chgrp -R 0 /var/cache/nginx && chmod -R g+rwX /var/cache/nginx && \
+    chgrp -R 0 /var/run && chmod -R g+rwX /var/run
 
 USER 1001
 EXPOSE 8080
