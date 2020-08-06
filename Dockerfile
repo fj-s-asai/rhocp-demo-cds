@@ -20,5 +20,5 @@ RUN chgrp -R 0 /etc/nginx && chmod -R g+rwX /etc/nginx && \
 
 USER 1001
 EXPOSE 8080
-ENTRYPOINT ["tail","-f","/dev/null]
+ENTRYPOINT ["tail","-f","/dev/null"]
 
