@@ -10,7 +10,11 @@ RUN touch /etc/yum.repos.d/nginx.repo && \
       
 RUN yum clean all -y && \
   yum install -y nginx
-  
+
+RUN sed -i 's/^\s+listen\s+.*$/   listen 8080;/' /etc/nginx/conf.d/default.conf && \
+    sed -i 's/^\s+root\s+.*$/       root \/demo\/contents;/' /etc/nginx/conf.d/default.conf
+
+      
     
 RUN chgrp -R 0 /etc/nginx && chmod -R g+rwX /etc/nginx && \
     chgrp -R 0 /var/log/nginx && chmod -R g+rwX /var/log/nginx && \
